@@ -92,7 +92,17 @@ h1, h2, h3, h4, h5, h6,
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
-
+	&_white
+		color: #444
+		background-color: #fff
+		&::after
+			background-color: darken(#fff, 50%)
+		&:focus, &:hover
+			color: #444
+		&:hover
+			background-color: lighten(#fff, 5%)
+		&:active
+			background-color: darken(#fff, 5%)
 
 .img-responsive
 	display: block
@@ -322,5 +332,103 @@ h1, h2, h3, h4, h5, h6,
 	&__icon
 		margin-right: 5px
 		color: #555
+
+
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.js-carousel-services .owl-item:nth-child( #{length($colors)}n + #{$i} )
+		background-color: nth($colors, $i)
+
+
+.carousel-services
+	position: relative
+	.owl-item
+		&:nth-child(2n + 2)
+			.carousel-services__item
+				flex-direction: column
+		.carousel-services__item-logo
+			display: inline-block
+			text-align: center
+			width: rem(100px)
+			height: auto
+	.owl-nav
+		position: absolute
+		width: 100%
+		top: 0
+		.owl-prev, .owl-next
+			width: rem(64px)
+			height: rem(64px)
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+		.owl-prev
+			left: 0
+		.owl-next
+			right: 0
+		.fa
+			font-size: rem(26px)
+			line-height: rem(64px)
+
+	&__item
+		display: flex
+		flex-direction: column-reverse
+		color: #fff
+		font-size: rem(18px)
+		font-weight: 200
+		position: relative
+		&:hover
+			.carousel-services__item-img
+				opacity: 1
+		&-composition
+			width: 100%
+			text-align: center
+		&-content
+			display: flex
+			position: relative
+			padding: rem(40px) 10%
+		&-img
+			background-size: cover
+			background-position: center
+			opacity: 0.8
+			transition: opacity 0.25s ease-out
+		
+		&-logo-wrap
+			margin-bottom: rem(8px)
+			text-align: center
+		&-title
+			font-size: rem(28px)
+			font-weight: 800
+			line-height: 1.2
+			margin-bottom: rem(20px)
+			text-align: center
+			span
+				font-weight: 200
+				font-size: rem(17px)
+				display: block
+				margin-top: rem(8px)
+		&-list
+			list-style-type: none
+			margin: 0
+			padding: 0
+			text-align: center
+		&-li
+			padding-bottom: rem(16px)
+			margin-bottom: rem(16px)
+			border-bottom: 1px solid rgba(#000, 0.12)
+			&:last-child
+				border-bottom: none
+		&-price
+			font-family: firasans, sans-serif
+			color: #4a4a4a
+			&-icon
+				font-size: rem(15px)
+				margin-left: rem(5px)
+		&-btn-wrap
+			text-align: center
+			.main-btn
+				padding: rem(16px) rem(45px)
+
+
 
 @import "media" // Always at the end

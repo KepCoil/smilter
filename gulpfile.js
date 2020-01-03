@@ -46,7 +46,9 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/mmenu/js/jquery.mmenu.all.min.js',
-		'app/js/common.js', // Always at the end
+		'app/libs/owl.carousel/owl.carousel.min.js',
+		'app/libs/equalHeights/equalheights.js',
+		'app/js/common.js' // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)
