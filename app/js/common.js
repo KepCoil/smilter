@@ -74,6 +74,13 @@ $(function() {
 	} onResize();
 	
 
+	$('section .h2').each(function() {
+		var ths  = $(this);
+		ths.html( ths.html().replace(/^(\S+)/, '<span>$1</span>'));
+	});
+
+	
+
 	/* При ресайзе страницы */
 	window.onresize = function () {
 		onResize();
