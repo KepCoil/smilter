@@ -1,0 +1,101 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	html
+		font-size: 90%
+	.header-composition
+		&__wellcome
+			&-title
+				font-size: rem(60px)
+	.contacts-head
+		&__item
+			font-size: rem(15px)
+
+// ≥992px
++media-breakpoint-down(md)
+	.contacts-head
+		&__item
+			font-size: rem(13px)
+		&__col
+			&:last-child
+				text-align: center
+				margin-top: rem(10px)
+
+// ≥768px
++media-breakpoint-down(sm)
+	.header-composition
+		&__wellcome
+			&-title
+				font-size: rem(50px)
+	.contacts-head
+		&__col
+			text-align: center
+			margin: rem(5px) 0
+			&:last-child
+				margin-top: auto
+
+// ≥576px
++media-breakpoint-down(xs)
+	html
+		font-size: 80%
+	.contacts-head
+		&__item
+			font-size: rem(15px)
+	.logo
+		margin-left: 15px
+	.hamburger
+		padding: 0 15px
+		right: 0
+	.social-block_home
+		padding: 0 15px
+	.header__home
+		min-height: auto
+
+// 480px
++media-breakpoint-down(smx)
+	html
+		font-size: 75%
+	.phone
+		display: none
+	.header-composition
+		&__wellcome
+			&-title
+				font-size: rem(38px)
+			&-text
+				font-size: rem(12px)
+			&-city
+				font-size: rem(14px)
+				margin-bottom: rem(20px)
+		&__main
+			&-text
+				font-size: rem(15px)
+				margin-bottom: rem(20px)
+	.contacts-head
+		&__col
+			text-align: left 
+			&:last-child
+				text-align: left
+		&__item
+			&_phone
+				text-align: left
+	.main-btn
+		padding: rem(15px) rem(40px)
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

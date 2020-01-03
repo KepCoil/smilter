@@ -1,0 +1,326 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "_mixins/_px-to-rem"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html
+	font-size: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+header, main, section
+	position: relative
+
+section
+	background-color: #fff
+
+b, strong
+	font-weight: bold	
+
+a
+	color: $accent
+	transition: color 0.25s ease-out
+	&:hover
+		color: darken($accent, 15%)
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+	text-transform: uppercase
+	line-height: 1.4
+
+.color-accent
+	color: $accent
+
+.main-btn
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: rem(18px) rem(50px)
+	font-size: rem(13px)
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 2px
+	border-radius: 3px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+.header
+	&__home
+		height: 100vh
+		min-height: 700px
+		background-color: $dark
+		background-size: cover
+		background-position: center
+	&__social
+		display: flex
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		border-left: rgba(#fff, 0.1) 1px solid
+	&__contacts
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		border-top: rgba(#fff, 0.1) 1px solid
+		padding: rem(14px) 0
+
+.top-line
+	position: absolute
+	width: 100%
+	z-index: 1
+	color: #fff
+	padding-top: rem(40px)
+	&::after
+		content: ""
+		display: table
+		clear: both
+
+.logo
+	margin-left: rem(45px)
+	&__img
+		width: rem(125px)
+		height: auto
+		
+.phone
+	display: inline-block
+	position: absolute
+	right: rem(100px)
+	font-size: rem(22px)
+	white-space: nowrap
+	&__icon
+		color: #808080
+		font-size: rem(26px)
+		margin-right: 3px
+		vertical-align: middle
+	&__text
+		font-family: "firasans-regular", sans-serif
+	
+.hamburger
+	position: absolute
+	padding: 5px 10px
+	right: rem(15px)
+	.hamburger-box
+		width: 34px
+		height: 20px
+		vertical-align: middle
+	.hamburger-inner, 
+	.hamburger-inner::before, 
+	.hamburger-inner::after
+		width: 34px
+		border-radius: 0
+		background-color: #fff
+		height: 2px
+	.hamburger-inner::before
+		top: -8px
+	.hamburger-inner::after
+		bottom: -8px
+
+.mm-navbar
+	height: auto
+	padding: 0
+	position: relative
+	border: none
+	.mm-title
+		padding: rem(48px) 0
+		img
+			width: rem(190px)
+			height: auto
+
+.mm-panels > .mm-panel > .mm-listview:first-child, 
+.mm-panels > .mm-panel > .mm-navbar + .mm-listview
+	margin-top: 0
+.mm-panels > .mm-panel.mm-hasnavbar
+	padding-top: 0
+.mm-panels > .mm-panel::before
+	height: auto
+.mm-listview > li:not(.mm-divider)::after
+	border-bottom-width: 0
+.mm-listview > li > a, 
+.mm-listview > li > span
+	padding: rem(20px) rem(40px)
+	font-size: rem(16px)
+
+
+.main-menu
+	&__li
+		>a.menu-menu__link
+			transition: color 0.25s ease-out
+			&::before
+			 	content: '\f219'
+			 	font-family: fontawesome
+			 	margin-right: 7px
+			 	text-decoration: none
+			 	font-size: rem(12px)
+			 	position: relative
+			 	top: -2px
+			&:hover
+				color: $accent
+		&_active
+			>a.menu-menu__link
+				color: $accent
+		
+.header-content
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+	&__main
+		margin: auto
+
+.header-composition
+	text-align: center
+	position: relative
+	color: #fff
+	&__wellcome
+		&-text
+			display: flex
+			align-items: center
+			white-space: nowrap
+			text-transform: uppercase
+			font-size: rem(14px)
+			font-weight: 200
+			&::before, &::after
+				content: ''
+				height: 1px
+				width: 100%
+				position: relative
+				background-color: #fff
+				display: inline-block
+			&::before
+				margin-right: 10px
+			&::after
+				margin-left: 10px
+		&-title
+			font-weight: 100
+			font-size: rem(65px)
+			border-bottom: 1px solid #fff
+			white-space: nowrap
+			padding: rem(6px) 0 rem(12px) 0
+			margin-bottom: rem(30px)
+		&-city
+			display: block
+			margin-bottom: rem(35px)
+			text-transform: uppercase
+			font-size: rem(17px)
+			font-weight: 600
+			&::before, 
+			&::after
+				content: "\f005"
+				font-family: fontawesome
+				color: #555
+				font-size: rem(12px)
+				position: relative
+				top: -2px
+			&::before
+				margin-right: rem(15px)
+			&::after
+				margin-left: rem(15px)
+	&__main
+		&-text
+			margin-bottom: rem(40px)
+			font-weight: 200
+
+.social-block
+	margin: auto
+	&_home
+		padding: 0 rem(21px)
+	&__list
+		list-style-type: none
+		margin: 0
+		padding: 0
+	&__link
+		display: block
+		color: #2c2c2c
+		font-size: rem(18px)
+		background-color: rgba(#fff, 0.2)
+		width: rem(40px)
+		height: rem(40px)
+		line-height: rem(40px)
+		margin: rem(20px) 0
+		border-radius: 50%
+		text-align: center
+		transition: color 0.25s ease-out, background-color 0.25s ease-out
+		&:hover
+			background-color: $accent
+			color: #fff
+
+	
+.contacts-head
+	background-color: rgba(#151515, 0.15)
+	&__item
+		color: #fff
+		&_phone
+			text-align: center
+			font-family: "firasans-regular", sans-serif
+	&__link
+		color: #fff
+		&:hover
+			text-decoration: none
+			color: #fff
+	&__icon
+		margin-right: 5px
+		color: #555
+
+@import "media" // Always at the end
