@@ -1,6 +1,6 @@
 $(function() {
 
-
+	// Mmenu
 	$('#my-menu').mmenu({
 		extensions: [
 			'theme-black',
@@ -62,17 +62,15 @@ $(function() {
 		});
 	} carouselServiceHeight();
 
+	
+	/* END OWL CAROUSEL */
+
+
+	// commin
 	$('.js-carousel-services__item-title').each(function() {
 		var ths  = $(this);
 		ths.html( ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 	});
-
-	/* END OWL CAROUSEL */
-
-	function onResize() {
-		$('.carousel-services__item-composition').equalHeights();
-	} onResize();
-	
 
 	$('section .h2').each(function() {
 		var ths  = $(this);
@@ -81,9 +79,37 @@ $(function() {
 
 	
 
-	/* При ресайзе страницы */
+	/* Scripts for resize page */
+	function onResize() {
+		$('.carousel-services__item-composition').equalHeights();
+	} onResize();
+	
 	window.onresize = function () {
 		onResize();
 	};
+
+
+
+	/* FORMS */
+	$("#js-callback").submit(function() { //Change
+		var ths = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: ths.serialize()
+		}).done(function() {
+			$(ths).find('.callback__success').addClass('callback__success_active').hide().fadeIn();
+			setTimeout(function() {
+				// Done Functions
+				$(ths).find('.callback__success').removeClass('callback__success_active').fadeOut();
+				ths.trigger("reset");
+			}, 3000);
+		});
+		return false;
+	});
+
+	$('select').selectize({
+		create: true,
+ 	});
 
 });

@@ -21,22 +21,9 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
 
 header, main, section
 	position: relative
-
-section
-	background-color: #fff
-	&.s-inverse
-		color: #fff
-
 
 
 b, strong
@@ -47,6 +34,50 @@ a
 	transition: color 0.25s ease-out
 	&:hover
 		color: darken($accent, 15%)
+
+section
+	background-color: #fff
+
+input, textarea, select,
+// selectize
+.selectize-control .selectize-input,
+.selectize-control .selectize-input.full 
+	outline: none
+	display: inline-block
+	width: 100%
+	background-color: transparent
+	border: 1px solid $accent-dark
+	border-bottom: 2px solid $accent-dark
+	border-radius: 3px
+	padding: rem(8px) rem(16px)
+	box-shadow: none
+	line-height: inherit
+	font-size: inherit
+
+.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header
+	padding: rem(8px) rem(16px)
+.s
+	&-king, &-review, &-partners
+		padding: 5% 0
+	&-inverse
+		color: #fff
+		.h2
+			font-size: rem(30px)
+			color: $accent
+			font-weight: 800
+			span
+				color: #fff
+	&-overlay
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background-color: rgba($over, 0.9)
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6
@@ -117,6 +148,8 @@ h1, h2, h3, h4, h5, h6,
 
 .text-center
 	text-align: center
+
+
 
 .header
 	&__home
@@ -433,28 +466,6 @@ $colors: $blue, $red, $accent
 			.main-btn
 				padding: rem(16px) rem(45px)
 
-.s
-	&-king, &-review, &-partners
-		padding: 5% 0
-	&-inverse
-		.h2
-			font-size: rem(30px)
-			color: $accent
-			font-weight: 800
-			span
-				color: #fff
-	&-overlay
-		&::before
-			content: ''
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			width: 100%
-			height: 100%
-			background-color: rgba($over, 0.9)
-
 .s-king
 	&__content
 		&-text
@@ -483,6 +494,95 @@ $colors: $blue, $red, $accent
 
 
 
+.s-call
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: 25%
+	&::before
+		content: ''
+		position: absolute
+		width: 50%
+		height: 100%
+		right: 0
+		top: 0
+		bottom: 0
+		background-color: rgba($accent, 0.9)
+
+.call-form
+	position: relative
+	padding: 15% 7%
+	.h2
+		color: #fff
+	&__content
+		&-wrap-logo
+			margin-bottom: rem(5px)
+		&-logo
+			width: 100px
+			height: auto
+		&-title
+			margin-bottom: rem(5px)
+		&-text
+			margin-bottom: rem(35px)
+			font-size: rem(14px)
+		&-b
 
 
+.callback
+	input, textarea, select
+		width: 100%
+		color: #fff
+		margin-bottom: rem(20px)
+		&:required:valid,
+		&:focus:required:invalid
+			color: #fff
+			opacity: 1
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+		&::-moz-placeholder
+			color: #fff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #fff
+	.selectize-control .single .selectize-input,
+	.selectize-input.full
+		width: 100%
+		color: #fff
+	.selectize-control.single .selectize-input::after
+		border-color: #fff transparent transparent transparent
+	.selectize-control .selectize-input.input-active
+		color: #3c3c3c
+	.selectize-dropdown 
+		border-color: $accent-dark
+		.active
+			background-color: rgba($accent, 0.75)
+		.option
+			font-size: rem(16px)
+	option
+		color: #333
+	&__btn
+		margin-top: rem(25px)
+	
+	&__success
+		display: none
+		position: absolute
+		z-index: 10
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		text-transform: uppercase
+		font-size: rem(24px)
+		font-weight: 800
+		&-text
+			margin: auto
+		& ~ *
+			transition: all 0.5s ease-out
+		&_active
+			display: flex
+			& ~ *
+				opacity: 0.5
+				filter: blur(10px)
+
+		
 @import "media" // Always at the end
