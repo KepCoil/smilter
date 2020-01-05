@@ -11747,34 +11747,44 @@ a:hover {
   color: #f6ad1f;
 }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+h1, h1 {
+  font-size: 2.5rem;
+}
+
+h2, .h2 {
+  font-size: 1.875rem;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+}
+
+h5, .h5 {
+  font-size: 1.125rem;
+}
+
+h6, .h6 {
+  font-size: 1.0625rem;
+}
+
 section {
   background-color: #fff;
 }
 
-input, textarea, select,
-.selectize-control .selectize-input,
-.selectize-control .selectize-input.full {
-  outline: none;
-  display: inline-block;
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid #E0B660;
-  border-bottom: 2px solid #E0B660;
-  border-radius: 3px;
-  padding: 0.5rem 1rem;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  line-height: inherit;
-  font-size: inherit;
-}
-
-.selectize-dropdown [data-selectable],
-.selectize-dropdown .optgroup-header {
-  padding: 0.5rem 1rem;
-}
-
 .s-king, .s-review, .s-partners {
   padding: 5% 0;
+  background-size: cover;
+  background-position: center;
 }
 
 .s-inverse {
@@ -11803,10 +11813,38 @@ input, textarea, select,
   background-color: rgba(61, 61, 61, 0.9);
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  text-transform: uppercase;
-  line-height: 1.4;
+.s-overlay_white::before {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.s-overlay_white .h2 {
+  color: #F9C869;
+}
+
+.s-overlay_white .h2 span {
+  color: #F9C869;
+}
+
+input, textarea, select,
+.selectize-control .selectize-input,
+.selectize-control .selectize-input.full {
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #E0B660;
+  border-bottom: 2px solid #E0B660;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.selectize-dropdown [data-selectable],
+.selectize-dropdown .optgroup-header {
+  padding: 0.5rem 1rem;
 }
 
 .color-accent {
@@ -12328,7 +12366,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .carousel-services__item-title {
-  font-size: 1.75rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.25rem;
@@ -12561,11 +12598,6 @@ h1, h2, h3, h4, h5, h6,
           filter: blur(10px);
 }
 
-.s-review {
-  background-size: cover;
-  background-position: center;
-}
-
 .review {
   position: relative;
 }
@@ -12657,6 +12689,68 @@ h1, h2, h3, h4, h5, h6,
 
 .review-carousel .owl-dots .owl-dot.active {
   background-color: #F9C869;
+}
+
+.partners-carousel {
+  margin-top: 2.8125rem;
+  position: relative;
+}
+
+.partners-carousel .owl-stage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.partners-carousel .owl-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  margin: auto;
+}
+
+.partners-carousel .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}
+
+.partners-carousel .owl-nav .owl-prev, .partners-carousel .owl-nav .owl-next {
+  position: relative;
+  font-size: 2.1875rem;
+  padding: 0 0.9375rem;
+}
+
+.partners-carousel .owl-nav .owl-prev .fa, .partners-carousel .owl-nav .owl-next .fa {
+  color: #999;
+}
+
+.partners-carousel .owl-nav .owl-prev {
+  float: left;
+  left: -3.75rem;
+}
+
+.partners-carousel .owl-nav .owl-next {
+  float: right;
+  right: -3.75rem;
+}
+
+.partners-carousel__img {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  margin: auto;
 }
 
 /*==========  Desktop First  ==========*/
@@ -12758,6 +12852,12 @@ h1, h2, h3, h4, h5, h6,
   }
   .header__home {
     min-height: auto;
+  }
+  .partners-carousel .owl-nav .owl-prev {
+    left: 0;
+  }
+  .partners-carousel .owl-nav .owl-next {
+    right: 0;
   }
 }
 

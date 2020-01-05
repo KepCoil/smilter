@@ -1,5 +1,5 @@
 @import "vars"
-
+@import "_mixins/_px-to-rem"
 
 /*==========  Desktop First  ==========*/
 
@@ -85,9 +85,14 @@
 		padding: 0 15px
 	.header__home
 		min-height: auto
+	.partners-carousel 
+		.owl-nav 
+			.owl-prev
+				left: 0
+			.owl-next
+				right: 0
 
-
-// 480px
+// ≥480px
 +media-breakpoint-down(smx)
 	html
 		font-size: 75%
