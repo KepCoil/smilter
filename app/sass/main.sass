@@ -39,7 +39,7 @@ section
 	background-color: #fff
 
 input, textarea, select,
-// selectize
+// plugin selectize
 .selectize-control .selectize-input,
 .selectize-control .selectize-input.full 
 	outline: none
@@ -54,8 +54,10 @@ input, textarea, select,
 	line-height: inherit
 	font-size: inherit
 
-.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header
+.selectize-dropdown [data-selectable], 
+.selectize-dropdown .optgroup-header
 	padding: rem(8px) rem(16px)
+
 .s
 	&-king, &-review, &-partners
 		padding: 5% 0
@@ -467,6 +469,8 @@ $colors: $blue, $red, $accent
 				padding: rem(16px) rem(45px)
 
 .s-king
+	background-size: cover
+	background-position: center
 	&__content
 		&-text
 			font-size: rem(18px)
@@ -584,5 +588,71 @@ $colors: $blue, $red, $accent
 				opacity: 0.5
 				filter: blur(10px)
 
-		
+
+.s-review
+	background-size: cover
+	background-position: center
+
+.review
+	position: relative
+	&__quotes
+		position: absolute
+		width: 100%
+		&::before, &::after
+			content: ',,'
+			display: inline-block
+			position: absolute
+			font-size: rem(56px)
+			font-family: 'Times New Roman', sans-serif
+			color: $accent
+			font-weight: 600
+			line-height: 0
+			top: rem(152px)
+		&::before
+			transform: rotate(180deg)
+			left: rem(-75px)
+			top: rem(190px)
+		&::after
+			right: rem(-75px)
+
+	
+
+.review-carousel
+	text-align: center
+	margin-top: rem(45px)
+	&__header, &__meta
+		font-family: 'Times New Roman', sans-serif
+		font-style: italic
+	&__header
+		font-size: rem(32px)
+		font-weight: 600
+		margin-bottom: rem(5px)
+	&__meta
+		color: #bbb
+		font-size: rem(15px)
+		margin-bottom: rem(15px)
+		&-date, &-service
+			display: inline-block
+	&__rating
+		margin-bottom: rem(35px)
+		&-star
+			color: $accent
+			margin: 0 rem(2px)
+			font-size: rem(15px)
+	&__text
+		color: #bbb
+		font-size: rem(17px)
+		line-height: 1.75
+	.owl-dots
+		text-align: center
+		margin-top: rem(40px)
+		.owl-dot
+			display: inline-block
+			width: 10px
+			height: 10px
+			background-color: #fff
+			border-radius: 50%
+			margin: 0 5px
+			&.active
+				background-color: $accent
 @import "media" // Always at the end

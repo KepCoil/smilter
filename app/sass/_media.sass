@@ -34,6 +34,9 @@
 			width: 100%
 	.call-form
 		padding: 15% 0
+	.callback
+		&__btn-wrap
+			text-align: center
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -52,6 +55,19 @@
 			padding: 8% 0
 	.fotorama__nav-wrap
 		bottom: 0
+	.review
+		&__quotes
+			display: none
+	.review-carousel
+		&__text
+			line-height: 1.5
+		.owl-dots
+			margin-top: rem(30px)
+			.owl-dot
+				display: inline-block
+				width: 12px
+				height: 12px
+				margin: 0 7px
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -69,6 +85,7 @@
 		padding: 0 15px
 	.header__home
 		min-height: auto
+
 
 // 480px
 +media-breakpoint-down(smx)

@@ -50,6 +50,15 @@ $(function() {
 		}
 	});
 
+	$('.js-review-carousel').owlCarousel({
+		nav: false,
+		smartSpeed: 700,
+		dots: true,
+		loop: true,
+		autoHeight: true,
+		items: 1
+	});
+
 
 	function carouselServiceHeight() {
 		$('.carousel-services__item').each(function() {

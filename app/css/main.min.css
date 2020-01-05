@@ -12377,6 +12377,11 @@ h1, h2, h3, h4, h5, h6,
   padding: 1rem 2.8125rem;
 }
 
+.s-king {
+  background-size: cover;
+  background-position: center;
+}
+
 .s-king__content-text {
   font-size: 1.125rem;
   margin: 1.875rem 0;
@@ -12556,6 +12561,104 @@ h1, h2, h3, h4, h5, h6,
           filter: blur(10px);
 }
 
+.s-review {
+  background-size: cover;
+  background-position: center;
+}
+
+.review {
+  position: relative;
+}
+
+.review__quotes {
+  position: absolute;
+  width: 100%;
+}
+
+.review__quotes::before, .review__quotes::after {
+  content: ',,';
+  display: inline-block;
+  position: absolute;
+  font-size: 3.5rem;
+  font-family: 'Times New Roman', sans-serif;
+  color: #F9C869;
+  font-weight: 600;
+  line-height: 0;
+  top: 9.5rem;
+}
+
+.review__quotes::before {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: -4.6875rem;
+  top: 11.875rem;
+}
+
+.review__quotes::after {
+  right: -4.6875rem;
+}
+
+.review-carousel {
+  text-align: center;
+  margin-top: 2.8125rem;
+}
+
+.review-carousel__header, .review-carousel__meta {
+  font-family: 'Times New Roman', sans-serif;
+  font-style: italic;
+}
+
+.review-carousel__header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.3125rem;
+}
+
+.review-carousel__meta {
+  color: #bbb;
+  font-size: 0.9375rem;
+  margin-bottom: 0.9375rem;
+}
+
+.review-carousel__meta-date, .review-carousel__meta-service {
+  display: inline-block;
+}
+
+.review-carousel__rating {
+  margin-bottom: 2.1875rem;
+}
+
+.review-carousel__rating-star {
+  color: #F9C869;
+  margin: 0 0.125rem;
+  font-size: 0.9375rem;
+}
+
+.review-carousel__text {
+  color: #bbb;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.review-carousel .owl-dots {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.review-carousel .owl-dots .owl-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.review-carousel .owl-dots .owl-dot.active {
+  background-color: #F9C869;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
   html {
@@ -12597,6 +12700,9 @@ h1, h2, h3, h4, h5, h6,
   .call-form {
     padding: 15% 0;
   }
+  .callback__btn-wrap {
+    text-align: center;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -12615,6 +12721,21 @@ h1, h2, h3, h4, h5, h6,
   }
   .fotorama__nav-wrap {
     bottom: 0;
+  }
+  .review__quotes {
+    display: none;
+  }
+  .review-carousel__text {
+    line-height: 1.5;
+  }
+  .review-carousel .owl-dots {
+    margin-top: 1.875rem;
+  }
+  .review-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 7px;
   }
 }
 
