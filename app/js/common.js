@@ -1,3 +1,8 @@
+$(window).on('load', function () {
+	$('#js-preloader').delay(1000).fadeOut('slow');
+});
+
+
 $(function() {
 
 	// Mmenu
@@ -94,6 +99,29 @@ $(function() {
 		var ths  = $(this);
 		ths.html( ths.html().replace(/^(\S+)/, '<span>$1</span>'));
 	});
+
+
+	// btn top
+	$(window).scroll(function() {
+
+		if ( $(this).scrollTop() > $(this).height() ) {
+			$("#js-btn-top").addClass('btn-top_active');
+		}
+		else {
+			$("#js-btn-top").removeClass('btn-top_active');
+		}
+	});
+
+	$('#js-btn-top').click(function() {
+		$('html, body').stop().animate(
+			{scrollTop: 0},
+			'slow',
+			'swing'
+		)
+	});
+
+	/*preloader*/
+
 
 	
 

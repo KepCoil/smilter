@@ -26,9 +26,15 @@
 
 <body id="is-home">
 	
+	<div id="js-preloader" class="preloader">
+		<div class="preloader__pulse"></div>
+		<style>.preloader {position: fixed;top: 0;right: 0;left: 0;bottom: 0;background-color: #1a1a1a;z-index: 9999;}.preloader__pulse {position: relative;top: 50vh;left: 50%;right: 0;margin: -40px -40px 0 0;}.preloader__pulse::before, .preloader__pulse::after {content: '';position: absolute;border: 5px solid #3d3d3d;width: 80px;height: 80px;border-radius: 50%;transition: all 0.8s ease-out;}.preloader__pulse::before {animation: pulse-outer 0.8s ease-in infinite;}.preloader__pulse::after {animation: pulse-inner 0.8s linear infinite;}@keyframes pulse-outer {0% {opacity: 1;filter: alpha(opacity=100);}50% {opacity: 0.5;filter: alpha(opacity=50);}100% {opacity: 0;filter: alpha(opacity=0);}}@keyframes pulse-inner {0% {opacity: 0;filter: alpha(opacity=0);transform: scale(0);}100% {opacity: 1;filter: alpha(opacity=100);transform: scale(1);}}
+		</style>
+	</div>
+	
+	
 	<div id="my-page">
 		
-
 		<header id="my-header" class="header">
 			<div class="header__home"style="background-image: url('img/top-bg.jpg');">
 				<div class="top-line">
@@ -514,16 +520,18 @@
 						
 						<div class="col-lg-2 col-sm-6">
 							<div class="main-footer__col">
-								<a href="#" class="main-footer__logo-link"><img class="main-footer__logo" src="img/logo-1.svg" alt="Smitler"></a>
-								<div class="main-footer__logo-text">Салон красоты<br>бизнес-класса в Москве</div>
-								<div class="main-footer__social">
-									<nav class="social-block social-block_foot">
-										<ul class="social-block__list">
-											<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-facebook"></i></a></li>
-											<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-instagram"></i></a></li>
-											<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-vk"></i></a></li>
-										</ul>
-									</nav>
+								<div class="main-footer__meta">
+									<a href="#" class="main-footer__logo-link"><img class="main-footer__logo" src="img/logo-1.svg" alt="Smitler"></a>
+									<div class="main-footer__logo-text">Салон красоты<br>бизнес-класса в Москве</div>
+									<div class="main-footer__social">
+										<nav class="social-block social-block_foot">
+											<ul class="social-block__list">
+												<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-facebook"></i></a></li>
+												<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-instagram"></i></a></li>
+												<li class="social-block__item"><a class="social-block__link" href="#"><i class="social-block__icon fa fa-vk"></i></a></li>
+											</ul>
+										</nav>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -582,6 +590,10 @@
 		</footer>
 	
 
+	</div>
+
+	<div id="js-btn-top" class="btn-top" title="Наверх">
+		<i class="fa fa-angle-double-up"></i>
 	</div>
 
 

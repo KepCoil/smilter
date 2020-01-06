@@ -171,3 +171,75 @@ input, textarea, select,
 
 .text-center
 	text-align: center
+
+.btn-top
+	position: fixed
+	bottom: 30px
+	right: -100px
+	width: 50px
+	height: 50px
+	background-color: #fff
+	z-index: 12
+	border-radius: 50%
+	line-height: 50px
+	text-align: center
+	font-size: 25px
+	cursor: pointer
+	transition: all 0.25s ease-out
+	opacity: 0.7
+	.fa
+		line-height: 0
+	&:hover
+		opacity: 1
+		background-color: $red
+		color: #fff
+	&_active
+		right: 25px
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity = $opacity)
+
+// styles in html
+// .preloader
+// 	position: fixed
+// 	top: 0
+// 	right: 0
+// 	left: 0
+// 	bottom: 0
+// 	background-color: $dark
+// 	z-index: 9999
+// 	&__pulse
+// 		position: relative
+// 		top: 50vh
+// 		left: 50%
+// 		right: 0
+// 		margin: -40px -40px 0 0
+// 		&::before, &::after
+// 			content: ''
+// 			position: absolute
+// 			border: 5px solid $over
+// 			width: 80px
+// 			height: 80px
+// 			border-radius: 50%
+// 			transition: all 0.8s ease-out
+// 		&::before
+// 			animation: pulse-outer 0.8s ease-in infinite
+// 		&::after
+// 			animation: pulse-inner 0.8s linear infinite
+
+// @keyframes pulse-outer
+// 	0%
+// 		@include opacity(100)
+// 	50%
+// 		@include opacity(50)
+// 	100%
+// 		@include opacity(0)
+
+// @keyframes pulse-inner
+// 	0%
+// 		@include opacity(0)
+// 		transform: scale(0)
+// 	100%
+// 		@include opacity(100)
+// 		transform: scale(1)

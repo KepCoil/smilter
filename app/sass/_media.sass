@@ -74,7 +74,7 @@
 				margin: 0 7px
 
 // ≥576px
-+media-breakpoint-down(xs)
++media-breakpoint-down(sm)
 	html
 		font-size: 80%
 	.contacts-head
@@ -89,12 +89,26 @@
 		padding: 0 15px
 	.header__home
 		min-height: auto
+	.s-king__content-title
+		text-align: center
+	.call-form
+		&__content
+			text-align: center
 	.partners-carousel 
 		.owl-nav 
 			.owl-prev
 				left: 0
 			.owl-next
 				right: 0
+	.main-footer
+		&__meta
+			text-align: center
+	.foot-address
+		&__item
+			&_phone
+				padding-top: 0
+				.foot-address__icon
+					top: rem(10px)
 
 // ≥480px
 +media-breakpoint-down(smx)
