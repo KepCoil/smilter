@@ -1,0 +1,97 @@
+
+ /* FOOTER */
+.main-footer
+ 	background-color: #242424
+ 	padding: 4% 0
+ 	font-size: rem(15px)
+ 	color: #fff
+
+
+.main-footer
+	&__col
+		margin: 15px 0
+	&__logo
+		width: 125px
+		height: auto
+		&-link
+			display: block
+			margin-bottom: rem(10px)
+		&-text
+			color: #666
+			font-size: rem(14px)
+			white-space: nowrap
+
+.social-block
+	&_foot
+		margin-top: rem(40px)
+		.social-block__item
+			display: inline-block
+			margin-right: rem(10px)
+			&:last-child
+				margin-right: 0
+		.social-block__icon
+			color: #ABABAB
+			transition: color 0.25s ease-out
+		.social-block__link
+			margin: 0
+			&:hover
+				.social-block__icon
+					color: #fff
+
+.main-menu_foot
+	.main-menu__li
+		&_active
+			.main-menu__text
+				border-color: $accent
+	.menu-menu__link
+		color: #979797
+		display: block
+		padding: rem(3px) 0
+		&::before
+			position: relative
+			color: #fff
+			top: 1px
+		&:hover
+			.main-menu__text
+				border-color: $accent
+	.main-menu__text
+		border-bottom: 1px solid #979797
+		transition: border-color 0.25s ease-out
+
+
+.foot-address
+	&__item
+		margin-bottom: rem(30px)
+		padding-left: rem(27px)
+		position: relative
+		&:last-child
+			margin-bottom: 0
+		&_phone
+			padding-top: rem(20px)
+			a:hover
+				text-decoration: none
+				.foot-address__text
+					color: $accent
+			.foot-address__text
+				font-size: rem(26px)
+				font-family: firasans-regular, sans-serif
+				transition: color 0.25s ease-out
+			.foot-address__icon
+				top: rem(30px)
+				font-size: rem(20px)
+				left: 2px
+	&__text
+		color: #fff
+	&__icon
+		position: absolute
+		left: 0
+		top: rem(4px)
+		font-size: rem(18px)
+		color: #979797
+
+.foot-map
+	max-height: 300px
+	opacity: 0.7
+	transition: opacity 0.5s ease-out
+	&:hover
+		opacity: 1
